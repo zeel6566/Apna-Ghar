@@ -1,0 +1,165 @@
+<%- include('partials/header') -%>
+
+<section id="testimonials">
+  <div class="container-fluid">
+    <h1 style="font-weight: bolder; font-family: cursive; margin-bottom: 40px">
+      <%= titleCityName %>
+    </h1>
+  </div>
+
+  <div class="row container-fluid">
+    <% cities.forEach(function(city){ %> 
+    <% if(city.cityName===requestedName ){ %>
+
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card h-100 border-light">
+        <div class="imageContainer">
+          <img
+            src="<%= city.cardImage %>"
+            class="card-img-top"
+            style="height: 434px"
+          />
+          <div class="hoverText">
+            <a href="/add-to-cart/" title="Add To Cart" role="button"
+              ><button class="btn hoverButton">
+                <img src="/assets/cart.svg" /></button
+            ></a>
+            <a href="/add-to-wishlist/" title="Add To Wishlist" role="button"
+              ><button class="btn hoverButton">
+                <img src="/assets/favorite.svg" /></button
+            ></a>
+            <button
+              class="btn hoverButton modalbtn"
+              id="button1"
+              href="#modal"
+              data-toggle="modal"
+              title="Quick View"
+            >
+              <img src="/assets/preview.svg" />
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= city.cityArea %></h5>
+          <p class="card-text"><%= city.price %></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="product-view">
+        <button type="button" class="close-button" data-dismiss="modal">
+          X
+        </button>
+        <div class="prduct-image">
+          <div class="photo-gallery">
+            <div class="container">
+              <div class="row photos">
+                <div class="col-sm-9 item" style="padding: 2px">
+                  <a
+                    href="<%= city.viewImage1 %>"
+                    data-lightbox="photos"
+                    ><img
+                      class="img-fluid"
+                      src="<%= city.viewImage1 %>"
+                  /></a>
+                </div>
+              </div>
+              <div class="row photos">
+                <div class="col-sm-3 item" style="padding: 2px" ;>
+                  <a
+                    href="<%= city.viewImage2 %>"
+                    data-lightbox="photos"
+                    ><img
+                      class="img-fluid"
+                      src="<%= city.viewImage2 %>"
+                      style="height: 110px"
+                  /></a>
+                </div>
+                <div class="col-sm-3 item" style="padding: 2px" ;>
+                  <a
+                    href="<%= city.viewImage3 %>"
+                    data-lightbox="photos"
+                    ><img
+                      class="img-fluid"
+                      src="<%= city.viewImage3 %>"
+                      style="height: 110px"
+                  /></a>
+                </div>
+                <div class="col-sm-3 item" style="padding: 2px" ;>
+                  <a
+                    href="<%= city.viewImage4 %>"
+                    data-lightbox="photos"
+                    ><img
+                      class="img-fluid"
+                      src="<%= city.viewImage4 %>"
+                      style="height: 110px"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prduct-desc">
+          <h2><%= city.cityArea %></h2>
+          <h5><b>Address: <%= city.cityAddress %></b></h5>
+          <h5>
+            <b>Postal Code:</b>
+            <%= city.postalCode %>
+          </h5>
+          <h5>
+            <b> Description :</b>
+            <%= city.cityDesc %>
+          </h5>
+          <p>
+            <b>Nearest Landmark:</b>
+            <%= city.nearestLandmark %>
+          </p>
+          <p>
+            <b>Accommodation for:</b>
+            <%= city.gender %>
+          </p>
+          <div class="price">
+            <h4>
+              Contact :
+              <p>
+                <a href="tel:+91 <%= city.phoneNumber %>"
+                  >+91 <%= city.phoneNumber %></a
+                >
+              </p>
+            </h4>
+          </div>
+          <label for="quantity" class="lable1"><b>Rooms:</b></label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            max="7"
+            value="1"
+          />
+          <br />
+          <a
+            href="mailto:<%= city.emailID %>"
+            class="btn1 btn btn-dark"
+            title="Enquire"
+            role="button"
+            >Enquire</a
+          >
+          <!--<a href="/add-to-wishlist/" class=" btn1 btn btn-dark" title="Add To Cart" role="button"><i
+                  class="icon1 fas fa-cart-plus"></i>Add to Wishlist</a>
+              <p><b>Shipping:</b>Dispatched within 2-3 working days.</p>-->
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <% } %> 
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/footer') -%>

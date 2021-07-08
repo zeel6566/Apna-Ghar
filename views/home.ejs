@@ -1,0 +1,309 @@
+<%- include('partials/header') -%>
+
+  <section class="pics-main">
+    <div class="row">
+      <div class="col-md">
+        <img src="assets/image3.jpg" style="height: 537px;width: 520px">
+      </div>
+      <div class="col-md" style="background-color: black">
+        <h1
+          style="color: white;text-align: center;letter-spacing: 25px;font-size: 60px;font-family: cursive;font-weight: bolder;padding-top: 40px">
+          APNA <span style="color:#e0ac1c">GHAR</span></h1>
+        <img src="/assets/brochure.svg" width="100px" height="100px" style="position: absolute;left: 170px;top: 250px;">
+        <p style="position: absolute;left: 155px;top: 360px;">Download Brochure</p>
+      </div>
+      <div class="col-md">
+        <img src="/assets/image4.jpg" style="height: 537px;width: 520px">
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="box-inside"
+      style="border: 3px solid black;height: 400px; margin: -50px 100px 100px 100px;position: relative;z-index: 1;background-color: white;box-shadow: 5px 10px black">
+
+      <hr style="height: 3px;color: grey;margin: 50px 100px 50px 100px">
+
+      <table style="margin: 0px 100px 0px 100px">
+        <tr>
+          <td>
+            <h2 style="color: black;letter-spacing: 2px; ">BENEFITS OF RENTING WITH US</h2>
+          </td>
+          <td>
+            <img src="assets/affordablerent.jpg" height="200px" width="200px" style="margin: 0px 50px 0px 50px">
+            <h4 align="center" style="font-weight: bold;">Affordable Rents</h3>
+          </td>
+          <td>
+            <img src="assets/zerobrokerage.jpg" height="200px" width="200px" style="margin: 0px 50px 0px 50px">
+            <h4 align="center" style="font-weight: bold;">Zero Brokerage</h3>
+          </td>
+          <td>
+            <img src="assets/instantdeposit.jpg" height="200px" width="200px" style="margin: 0px 50px 0px 50px">
+            <h4 align="center" style="font-weight: bold;">Instant Deposit</h3>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+
+  <section class="aboutus" id="aboutus">
+    <div class="container-fluid">
+      <div class="about-me-content container" style="background-color: #eff1f5;padding-top: 70px">
+        <div class="row">
+          <div class="col-md-4">
+            <img class="myPic" src="/assets/group picture.jpg" height="500px" width="315px">
+          </div>
+          <div class="content-column col-md-8">
+            <h2 class="abt-me-heading" style="color: #307672;font-family: 'Exo 2', sans-serif;letter-spacing: 4px;">
+              SOMETHING ABOUT US</h2>
+            <p class="abt-me-para" style="text-align: justify;color: black;">apnaghar.com is an online place where you
+              will be able to effortlessly search for a decent,nice stay for yourself in the location of your choice.
+              With growing awareness about careers the youth is out of their house to find a right and a fulfilling job
+              for themselves and for which they travel places either to take matching education or work as interns or
+              else take up jobs. stayforyou.com provides you a range of accommodation according to your suitability at
+              just the click of a key.<br><br>
+
+              The best way to address this need was through a mix of technology and offline efforts. On the technology
+              front, we found many websites that only communicate random listings, broker contacts and also unreal
+              photos to name a few, and many times only add to the troubles of the home seeker as well as the
+              sharer<br><br></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+
+    <div class="heading">
+      <center>
+        <h2><b> <em>BEST SELLERS</em></b>
+      </center>
+      </h2>
+    </div>
+    <!--images-->
+    <div class="row container-fluid">
+
+      <% cities.forEach(function(city){ %>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card h-100 border-light">
+            <div class="imageContainer">
+              <img src="<%= city.cardImage %>" class=" card-img-top" style="height:434px">
+              <div class="hoverText">
+                <a href="/add-to-cart/" title="Add To Cart" role="button"><button class="btn hoverButton"><img
+                      src="assets/cart.svg"></button></a>
+                <a href="/add-to-wishlist/" title="Add To Wishlist" role="button"><button class="btn hoverButton"><img
+                      src="assets/favorite.svg"></button></a>
+                <button class="btn hoverButton modalbtn" id="button1" href="#modal<%= city.modalNumber %>" data-toggle="modal"
+                  title="Quick View">
+                  <img src="assets/preview.svg"></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= city.cityArea %>
+              </h5>
+              <p class="card-text">
+                <%= city.price %>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal<%= city.modalNumber %>" class="modal">
+          <div class="product-view">
+            <button type='button' class='close-button' data-dismiss="modal">X</button>
+            <div class="prduct-image">
+              <div class="photo-gallery">
+                <div class="container">
+                  <div class="row photos">
+                    <div class="col-sm-9 item" style="padding: 2px;"><a href="<%= city.viewImage1 %>"
+                        data-lightbox="photos"><img class="img-fluid" src="<%= city.viewImage1 %>"></a></div>
+
+                  </div>
+                  <div class="row photos">
+                    <div class="col-sm-3 item" style="padding: 2px" ;><a href="<%= city.viewImage2 %>"
+                        data-lightbox="photos"><img class="img-fluid" src="<%= city.viewImage2 %>"
+                          style="height: 110px"></a></div>
+                    <div class="col-sm-3 item" style="padding: 2px" ;><a href="<%= city.viewImage3 %>"
+                        data-lightbox="photos"><img class="img-fluid" src="<%= city.viewImage3 %>"
+                          style="height: 110px;"></a></div>
+                    <div class="col-sm-3 item" style="padding: 2px" ;><a href="<%= city.viewImage4 %>"
+                        data-lightbox="photos"><img class="img-fluid" src="<%= city.viewImage4 %>"
+                          style="height: 110px;"></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="prduct-desc">
+              <h2>  
+                <%= city.cityArea %>
+              </h2>
+              <h5><b>Address: <%= city.cityAddress %></b></h5>
+              <h5><b>Postal Code:</b>
+                <%= city.postalCode %>
+              </h5>
+              <h5><b> Description :</b>
+                <%= city.cityDesc %>
+              </h5>
+              <p><b>Nearest Landmark:</b>
+                <%= city.nearestLandmark %>
+              </p>
+              <p><b>Accommodation for:</b>
+                <%= city.gender %>
+              </p>
+              <div class="price">
+                <h4>Contact : <p><a href="tel:+91 <%= city.phoneNumber %>">+91 <%= city.phoneNumber %></a></p>
+                </h4>
+              </div>
+              <label for="quantity" class="lable1"><b>Rooms:</b></label>
+              <input type="number" id="quantity" name="quantity" min="1" max="7" value="1">
+              <br>
+              <a href="mailto:<%= city.emailID %>" class=" btn1 btn btn-dark" title="Enquire" role="button">Enquire</a>
+              <!--<a href="/add-to-wishlist/" class=" btn1 btn btn-dark" title="Add To Cart" role="button"><i
+                  class="icon1 fas fa-cart-plus"></i>Add to Wishlist</a>
+              <p><b>Shipping:</b>Dispatched within 2-3 working days.</p>-->
+            </div>
+          </div>
+        </div>
+        <% }) %>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+  </section>
+
+  <!-- ABOUT US-->
+  <section class="contact-page" id="contact-page" style="background-color: #484848;">
+    <div class="container-contact100">
+      <div class="wrap-contact100">
+        <form class="contact100-form validate-form"  action="mailto:kishanrathodgdd@gmail.com" method="POST"
+          enctype="text/plain">
+          <span class="contact100-form-title">
+            Send Us A Message
+          </span>
+
+          <label class="label-input100" for="first-name">Tell us your name *</label>
+          <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+            <input id="first-name" class="input100" type="text"  name="_fname" placeholder="First name">
+            <span class="focus-input100"></span>
+          </div>
+          <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+            <input class="input100" type="text" name="_lname" placeholder="Last name">
+            <span class="focus-input100"></span>
+          </div>
+
+          <label class="label-input100" for="email">Enter your email *</label>
+          <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+            <input id="email" class="input100" type="text"  name=email" placeholder="Eg. example@email.com">
+            <span class="focus-input100"></span>
+          </div>
+
+          <label class="label-input100" for="phone">Enter phone number</label>
+          <div class="wrap-input100">
+            <input id="phone" class="input100" type="text" name="_msg" placeholder="Eg. +1 800 000000">
+            <span class="focus-input100"></span>
+          </div>
+
+          <label class="label-input100" for="message">Message *</label>
+          <div class="wrap-input100 validate-input" data-validate="Message is required">
+            <textarea id="message" class="input100" name="_message" placeholder="Write us a message"></textarea>
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn">
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <div class="contact100-more flex-col-c-m" style="background-image: url('assets/bg-01.jpg');">
+          <div class="flex-w size1 p-b-47">
+            <div class="txt1 p-r-25">
+              <span class="lnr lnr-map-marker"></span>
+            </div>
+
+            <div class="flex-col size2">
+              <span class="txt1 p-b-20">
+                Address
+              </span>
+
+              <span class="txt2">
+                Rang Enterprise, Navrangpura Road, Ahmedabad, Gujarat
+              </span>
+            </div>
+          </div>
+
+          <div class="dis-flex size1 p-b-47">
+            <div class="txt1 p-r-25">
+              <span class="lnr lnr-phone-handset"></span>
+            </div>
+
+            <div class="flex-col size2">
+              <span class="txt1 p-b-20">
+                Lets Talk
+              </span>
+
+              <span class="txt3">
+                +91 9727993507
+              </span>
+            </div>
+          </div>
+
+          <div class="dis-flex size1 p-b-47">
+            <div class="txt1 p-r-25">
+              <span class="lnr lnr-envelope"></span>
+            </div>
+
+            <div class="flex-col size2">
+              <span class="txt1 p-b-20">
+                General Support
+              </span>
+
+              <span class="txt3">
+                apnaghar25@gmail.in
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script>
+      $(".selection-2").select2({
+        minimumResultsForSearch: 20,
+        dropdownParent: $('#dropDownSelect1')
+      });
+    </script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    </section>
+
+  <!-- ABOUT US-->
+
+
+  <%- include('partials/footer') -%>

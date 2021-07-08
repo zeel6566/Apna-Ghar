@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login Page</title>
+</head>
+
+<body>
+
+    <div class='bold-line'></div>
+    <div class='container'>
+        <div class='window'>
+            <div class='overlay'></div>
+            <div class='content'>
+                <div class='welcome'>Hello There!</div>
+                <div class='subtitle'>To use our services you need to get logged in to your existing account.</div>
+                <div class='input-fields'>
+                <form action="/login" method="POST">
+                    <input placeholder="Email" type="email" name="username" class='input-line full-width' required>
+                    <input placeholder="Password" type="password" name="password" class='input-line full-width' required>
+                    <a href="/register"><p style="font-size: 12px;text-align: right;">Don't have an account? Register</p></a>
+                    <button type="submit" id="user-submit" class='ghost-round full-width'>Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div>
+
+        <form action="/login" method="POST">
+            <input placeholder="email" type="email" name="username" required>
+            <input placeholder="password" type="password" name="password" required>
+            <button type="submit" id="user-submit">Login</button>
+        </form>
+    </div>
+-->
+</body>
+
+</html>

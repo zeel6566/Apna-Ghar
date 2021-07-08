@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>APNA GHAR</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+
+    <script>
+      $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+    
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+    
+            // Store hash
+            var hash = this.hash;
+    
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function(){
+         
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+      });
+    
+      </script>
+    
+</head>
+
+<div class="container" style="padding-top: 60px">
+    <div style="background-color: #D3D3D3;height: 100px;padding-top: 30px;border-radius: 6px;">
+        <h1 style="color: #484848;"><center><b>COMPOSE</b></center></h1><br>
+    </div>
+<form action="/compose" method="post">
+    <div class="form-group">
+        <label for="cityArea">Area with city Name</label>
+        <input type="text" class="form-control" name="cityArea" value="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <label for="cityName">City Name</label>
+        <input type="text" class="form-control" name="cityName" value="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <label for="cityAddress">Full Address</label>
+        <input type="text" class="form-control" name="cityAddress" value="" placeholder="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <label for="postalCode">Postal Code</label>
+        <input type="text" class="form-control" name="postalCode" value="" placeholder="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" name="price" value="" placeholder="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <label for="cityDesc">Description</label>
+        <textarea name="cityDesc" class="form-control" rows="5" cols="30" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="nearestLandmark">Nearest Landmark</label>
+        <input type="text" class="form-control" name="nearestLandmark" value="" placeholder="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control" name="gender" value="" placeholder="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <label for="phoneNuumber">Phone Number</label>
+        <input type="number" class="form-control" name="phoneNumber" value="" placeholder="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <label for="emailID">Email ID for enquiry</label>
+        <input type="email" class="form-control" name="emailID" value="" placeholder="" autocomplete="off" required>
+    </div>
+    <div class="form-group">
+        <label for="cardImage">Thumbnail Image</label>
+        <input name="cardImage" type="file" id="img-1" accept=".jpg,.jpeg,.png" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="viewImage1">Image1</label>
+        <input name="viewImage1" type="file" id="img-2" accept=".jpg,.jpeg,.png" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="viewImage2">Image2</label>
+        <input name="viewImage2" type="file" id="img-3" accept=".jpg,.jpeg,.png" class="form-control" >
+    </div>
+    <div class="form-group">
+        <label for="viewImage3">Image3</label>
+        <input name="viewImage3" type="file" id="img-4" accept=".jpg,.jpeg,.png" class="form-control" >
+    </div>
+    <div class="form-group">
+        <label for="viewImage4">Image4</label>
+        <input name="viewImage4" type="file" id="img-5" accept=".jpg,.jpeg,.png" class="form-control" >
+    </div>
+
+    <input name="url1" id="url-1" type="text" class="form-control" style="position: absolute; visibility: hidden;" required>
+    <input name="url2" id="url-2" type="text" class="form-control" style="position: absolute; visibility: hidden;" required>
+    <input name="url3" id="url-3" type="text" class="form-control" style="position: absolute; visibility: hidden;" required>
+    <input name="url4" id="url-4" type="text" class="form-control" style="position: absolute; visibility: hidden;" required>
+    <input name="url5" id="url-5" type="text" class="form-control" style="position: absolute; visibility: hidden;" required>
+
+    <button type="submit" class="btn btn-success" name="button" value="">Publish</button>
+    <button type="reset" class="btn btn-danger" name="button" value="">Re-enter Data</button><br>
+    <a href="/home"><button type="button" class="btn btn-warning" style="margin-top: 10px;margin-bottom: 40px;" name="button" value="">Go to Home Page</button></a>
+
+
+</form>
+</div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>       
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCw6m2mDAQejDkebPON151Lfiw7ZHI5Kh0",
+    authDomain: "apna-ghar-abd3f.firebaseapp.com",
+    databaseURL: "https://apna-ghar-abd3f-default-rtdb.firebaseio.com",
+    projectId: "apna-ghar-abd3f",
+    storageBucket: "apna-ghar-abd3f.appspot.com",
+    messagingSenderId: "960509089454",
+    appId: "1:960509089454:web:66e6777a24ee5afda5bf3f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const storageRef = firebase.storage().ref();
+</script>
+<script >
+   document.getElementById("img-1").addEventListener("change", (e)=>{
+       uploadFiles(e.target.files[0]).then((url) => {
+         document.getElementById("url-1").value = url;
+       })
+   });
+   document.getElementById("img-2").addEventListener("change", (e)=>{
+       uploadFiles(e.target.files[0]).then((url) => {
+         document.getElementById("url-2").value = url;
+       })
+   });
+   document.getElementById("img-3").addEventListener("change", (e)=>{
+       uploadFiles(e.target.files[0]).then((url) => {
+         document.getElementById("url-3").value = url;
+       })
+   });
+   document.getElementById("img-4").addEventListener("change", (e)=>{
+       uploadFiles(e.target.files[0]).then((url) => {
+         document.getElementById("url-4").value = url;
+       })
+   });
+   document.getElementById("img-5").addEventListener("change", (e)=>{
+       uploadFiles(e.target.files[0]).then((url) => {
+         document.getElementById("url-5").value = url;
+       })
+   });
+
+   let uploadFiles = async(file) => {
+       const fileRef  = storageRef.child(file.name);
+        await fileRef.put(file);
+        const fileUrl = await fileRef.getDownloadURL();
+        return fileUrl;
+   }
+
+</script>
